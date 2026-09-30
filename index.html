@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b1324"><meta name="description" content="فرز تصاريح الطلاب بسرعة بالصوت أو البحث النصي">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css">
+<title>فرز تصاريح الطلاب</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><div class="brand"><div class="brand-mark">✓</div><div><div class="brand-title">فرز تصاريح الطلاب</div><div class="brand-sub">Student Permit Sorter</div></div></div><button id="installBtn" class="icon-btn hidden" aria-label="تثبيت التطبيق">＋</button></header>
+<main>
+<section class="hero"><div><span class="eyebrow">SMART SORT • OFFLINE FIRST</span><h1>ابحث عن الطالب<br><strong>وانطق اسمه فقط.</strong></h1><p>اعرف رقمه وتخصصه فورًا وسجّل التصريح بضغطة واحدة.</p></div><div class="hero-orb">🎓</div></section>
+<section class="stats"><div class="stat"><span>إجمالي الطلاب</span><b id="totalCount">0</b></div><div class="stat success"><span>تم الفرز</span><b id="sortedCount">0</b></div><div class="stat"><span>متبقي</span><b id="remainingCount">0</b></div></section>
+<section class="search-card"><div class="section-head"><div><h2>العثور على طالب</h2><span id="searchStatus">جاهز للبحث</span></div><span class="live-dot"></span></div><button id="voiceBtn" class="voice-btn"><span class="voice-ring"></span><span class="mic">🎙️</span><strong>اضغط وتحدث</strong><small>انطق اسم الطالب بوضوح</small></button><div class="divider"><span>أو اكتب الاسم</span></div><div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="اكتب اسم الطالب..." autocomplete="off"><button id="clearSearch" aria-label="مسح">×</button></div><div id="results" class="results"></div></section>
+<section class="quick-actions"><button id="importBtn" class="action-card"><span>📥</span><div><b>استيراد Excel</b><small>تحميل بيانات الطلاب</small></div></button><button id="demoBtn" class="action-card"><span>✨</span><div><b>بيانات تجريبية</b><small>جرّب التطبيق الآن</small></div></button><input id="fileInput" type="file" accept=".xlsx,.xls,.csv" hidden></section>
+<section class="specializations"><div class="section-head"><div><h2>التقدم حسب التخصص</h2><span>يتحدث تلقائيًا بعد كل فرز</span></div></div><div id="specializationList"></div></section>
+</main>
+<nav class="bottom-nav"><button class="nav-item active" data-view="home"><span>⌂</span><small>الرئيسية</small></button><button class="nav-item" data-view="students"><span>♙</span><small>الطلاب</small></button><button class="nav-item" data-view="settings"><span>⚙</span><small>الإعدادات</small></button></nav>
+</div>
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal hidden"><div class="modal-box"><button id="modalClose" class="modal-close">×</button><div id="modalContent"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script><script src="app.js"></script>
+</body></html>
